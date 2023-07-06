@@ -7,11 +7,6 @@
   
   programs = {
     nm-applet.enable = true;
-    seahorse.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
   };
 
   boot.loader = {

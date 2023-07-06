@@ -8,8 +8,6 @@
 
   home = {    
     packages = with pkgs; [
-      gnome.gnome-keyring
-      pinentry-gnome
       volumeicon
       i3status
       picom
