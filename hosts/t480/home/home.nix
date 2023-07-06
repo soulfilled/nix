@@ -27,7 +27,8 @@
     bash = {
       enable = true;
       initExtra = ''
-        export PS1="\W # "
+        export PS1="\W % "
+        alias rb="sudo nixos-rebuild switch --flake .#snowflake"
       '';
     };
     
