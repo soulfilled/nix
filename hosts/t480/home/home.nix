@@ -41,6 +41,9 @@
       userEmail = "soulless@keemail.me";
       userName  = "soulfilled";
       enable = true;
+      extraConfig = {
+        pull.rebase = true;
+      };
     };
   };
 }
