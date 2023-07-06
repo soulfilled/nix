@@ -1,11 +1,22 @@
 { config, pkgs, ... }: {
   environment.variables.NIX_SHELL_PRESERVE_PROMPT = "true";
-  i18n.defaultLocale = "en_US.UTF-8";
-  programs.nm-applet.enable = true;
+  i18n.defaultLocale = "en_US.UTF-8";  
   time.timeZone = "Asia/Karachi";
   system.stateVersion = "23.11";
   sound.enable = true;
   
+  programs = {
+    nm-applet.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+
+    seahorse = {
+      enable = true;
+    };
+  };
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
@@ -33,10 +44,10 @@
       enable = true;
       levels = [
         [0  0   55]
-        [1  48  60]
-        [2  50  61]
-        [3  52  63]
-        [6  56  65]
+        [3  48  60]
+        [4  50  61]
+        [5  52  63]
+        [7  56  65]
         [7  60  85]
         ["level auto" 80 32767]
       ];

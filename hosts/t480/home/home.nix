@@ -8,6 +8,7 @@
 
   home = {    
     packages = with pkgs; [
+      pinentry-gnome
       volumeicon
       i3status
       picom
