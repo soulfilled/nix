@@ -21,11 +21,25 @@
     stateVersion = "23.11";
   };
 
-  programs.vscode = {
-    enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      vscodevim.vim
-    ];
+  programs = {
+    bash = {
+      enable = true;
+      initExtra = ''
+        export PS1="\W # "
+      '';
+    };
+    
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+      ];
+    };
+
+    git = {
+      userEmail = "soulless@keemail.me";
+      userName  = "soulfilled";
+      enable = true;
+    };
   };
 }

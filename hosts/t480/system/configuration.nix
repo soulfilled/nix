@@ -1,15 +1,16 @@
 { config, pkgs, ... }: {
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot.enable = true;
-  };
-
+  environment.variables.NIX_SHELL_PRESERVE_PROMPT = "true";
   i18n.defaultLocale = "en_US.UTF-8";
   programs.nm-applet.enable = true;
   time.timeZone = "Asia/Karachi";
   system.stateVersion = "23.11";
   sound.enable = true;
   
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot.enable = true;
+  };
+
   networking = {
     networkmanager.enable = true;
     hostName = "snowflake";
